@@ -1,0 +1,25 @@
+{
+  "name": "stars_of_the_north_w4",
+  "version": "1.0.0",
+  "description": "An autosuggest for the stars in the universe",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN4/stars_of_the_north_w4.git"
+  },
+  "author": "Stars Of the North",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN4/stars_of_the_north_w4/issues"
+  },
+  "homepage": "https://github.com/FACN4/stars_of_the_north_w4#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.3",
+    "nyc": "^12.0.2",
+    "tape": "^4.9.1"
+  }
+}
