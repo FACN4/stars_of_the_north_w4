@@ -1,0 +1,10 @@
+body {
+  color: #fff;
+  background: #000 url("./images/stars_sky_night_113553_300x168.jpg");
+  background-repeat: repeat;
+  background-position: top;
+  text-align: center;
+}
+
+form {
+}
