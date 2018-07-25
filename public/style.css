@@ -6,5 +6,18 @@ body {
   text-align: center;
 }
 
-form {
+form input {
+  width: 500px;
+  background: #d3d3d3;
+  border: 0px;
+}
+
+.searchResult {
+  width: 500px;
+  background: #d3d3d3;
+  margin: 0 auto;
+}
+
+.searchResult:hover {
+  background: dark grey;
 }

@@ -3,7 +3,7 @@
 var starForm = document.getElementById("star-finder");
 starForm.addEventListener(
   "keyup",
-  fetchDataFromServer(starForm.input, appendData)
+  fetchDataFromServer(starForm.input, appendDataFromServer)
 );
 
 // Function to send a request for data from the server
@@ -22,4 +22,10 @@ function fetchDataFromServer(searchValue, callback) {
 
 // Function to add all of the user's suggestions to the DOM.
 
-function appendDataFromServer(response) {}
+function appendDataFromServer() {
+  var dataArray = ["cat", "dog"];
+  JSON.parse(response);
+  response.forEach();
+}
+
+appendDataFromServer();
