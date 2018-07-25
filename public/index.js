@@ -28,11 +28,17 @@ function fetchDataFromServer(userQuery, callback) {
 function appendDataFromServer(response) {
   var searchResults = document.getElementById("search-results");
   removeChildren(searchResults);
-  response.forEach(function(items) {
+  if (response.length === 0) {
     var newDiv = document.createElement("div");
-    newDiv.textContent = items;
+    newDiv.textContent = "Sorry, no results found. Please try another search.";
     searchResults.appendChild(newDiv);
-  });
+  } else {
+    response.forEach(function(items) {
+      var newDiv = document.createElement("div");
+      newDiv.textContent = items;
+      searchResults.appendChild(newDiv);
+    });
+  }
 }
 
 function removeChildren(obj) {
