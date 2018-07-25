@@ -3,39 +3,25 @@
 <html>
 
 <head>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stars Of The North</title>
   <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body>
-
-  <section class="mainContainer">
-
-    <header class="header">
-      <h1 >Stars Of The North</h1>
-    </header>
-
-    <div class="formContainer">
-      <p class=instruction> Type something and get suggestions</p>
-      <form autocomplete="off">
-          <input id = "star-finder" placeholder="enter your star name">
-          <button id = "btn" type="button">S</button>
-      </form>
-
-      <div id="acPreview">
-      </div>
-
-    </div>
-
-
-  </section>
+<div class="stars"></div>
+<div class="twinkling"></div>
+<h1>Stars Of The North</h1>
+<p class=instruction> Type something and get suggestions</p>
+  <form>
+      <input  autocomplete="off" type ="text" id = "star-finder" placeholder="Type your star name">
+      <img src = "./assets/images/sreach-icon.png" alt = "search icon" >
+  </form>
+  <div class="search-result"> search result #1</div>
+  <div class="search-result"> search result #2</div>
   <script src="./index.js"></script>
-  <script src="./test/testobj.js"></script>
-  <script src="./js/logic.js"></script>
-  <script src="./js/dom.js"></script>
-
 </body>
-
 </html>
