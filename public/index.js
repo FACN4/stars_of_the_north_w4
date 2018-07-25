@@ -34,9 +34,11 @@ function appendDataFromServer(response) {
     searchResults.appendChild(newDiv);
   } else {
     response.forEach(function(items) {
-      var newDiv = document.createElement("div");
-      newDiv.textContent = items;
-      searchResults.appendChild(newDiv);
+      var googleURL = "https://www.google.co.uk/search?q=" + items + " star";
+      var anchorText = document.createElement("a");
+      anchorText.text = items;
+      anchorText.href = googleURL;
+      searchResults.appendChild(anchorText);
     });
   }
 }

@@ -4,6 +4,11 @@ body {
   background: #000;
   text-align: center;
 }
+
+a {
+  color: #fff;
+  display: block;
+}
 h1 {
   font-size: 70px;
 }
