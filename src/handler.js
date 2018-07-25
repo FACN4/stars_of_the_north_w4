@@ -1,15 +1,33 @@
-var handlePublic= function(request, response){
-   if(url === '/public/main.css'){
-    var filePath = path.join(__dirname, '..', 'public', 'main.css');
-    fs.readFile(filePath,function(error,file){
-      if(error){
-        response.writeHead(500, 'Content-type: text/html');
-        response.end('<h1>Sorry, something went wrong</h1>');
-    }
-    response.writeHead(200, 'Content-type: text/css');
-    response.end(file);
+var fs = require("fs");
+var autocomplete = require("./dictionary.js")
 
+function indexHandler(request, response) {
+    fs.readFile(__dirname + "/../public/index.html", function(error, file) {
+
+      if (error) {
+        console.error(error);
+        response.writeHead(404);
+      } else {
+        response.writeHead(200, {"Content-type": "text/html"});
+        response.write(file);
+      }
+      response.end();
+    });
+  }
+
+function assetsHandler (request, response){
+  fs.readFile(__dirname + "/../public/" +request.url, function(error, file) {
+    if (error) {
+      console.error(error);
+      response.writeHead(404);
+    } else {
+      response.write(file);
+    }
+    response.end();
   });
+
+
 }
-}
-module.exports = handlePublic;
+
+
+  module.exports = {index: indexHandler, assets: assetsHandler};
