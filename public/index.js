@@ -24,8 +24,7 @@ function fetchDataFromServer(searchValue, callback) {
 
 function appendDataFromServer() {
   var dataArray = ["cat", "dog"];
-  JSON.parse(response);
-  response.forEach();
+  data.forEach();
 }
 
 appendDataFromServer();
