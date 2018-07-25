@@ -9,7 +9,9 @@ starForm.addEventListener("keyup", function() {
 
 function fetchDataFromServer(userQuery, callback) {
   var xhr = new XMLHttpRequest();
+  userQuery = userQuery.toLowerCase();
   var url = "/search" + "?q=" + userQuery;
+  var encoded = encodeURI(url);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
       console.log(xhr.responseText);
@@ -17,7 +19,7 @@ function fetchDataFromServer(userQuery, callback) {
       callback(response);
     }
   };
-  xhr.open("GET", url, true);
+  xhr.open("GET", encoded, true);
   xhr.send();
 }
 
@@ -26,11 +28,17 @@ function fetchDataFromServer(userQuery, callback) {
 function appendDataFromServer(response) {
   var searchResults = document.getElementById("search-results");
   removeChildren(searchResults);
-  response.forEach(function(items) {
+  if (response.length === 0 && starForm.value !== "") {
     var newDiv = document.createElement("div");
-    newDiv.textContent = items;
+    newDiv.textContent = "Sorry, no results found. Please try another search.";
     searchResults.appendChild(newDiv);
-  });
+  } else {
+    response.forEach(function(items) {
+      var newDiv = document.createElement("div");
+      newDiv.textContent = items;
+      searchResults.appendChild(newDiv);
+    });
+  }
 }
 
 function removeChildren(obj) {
