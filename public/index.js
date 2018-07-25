@@ -28,7 +28,7 @@ function fetchDataFromServer(userQuery, callback) {
 function appendDataFromServer(response) {
   var searchResults = document.getElementById("search-results");
   removeChildren(searchResults);
-  if (response.length === 0) {
+  if (response.length === 0 && starForm.value !== "") {
     var newDiv = document.createElement("div");
     newDiv.textContent = "Sorry, no results found. Please try another search.";
     searchResults.appendChild(newDiv);
