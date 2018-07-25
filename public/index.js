@@ -24,13 +24,17 @@ function fetchDataFromServer(userQuery, callback) {
 // Function to add all of the user's suggestions to the DOM.
 
 function appendDataFromServer(response) {
-  removeChildren();
+  var searchResults = document.getElementById("search-results");
+  removeChildren(searchResults);
   response.forEach(function(items) {
     var newDiv = document.createElement("div");
-    var searchResults = document.getElementById("search-results");
     newDiv.textContent = items;
     searchResults.appendChild(newDiv);
   });
 }
 
-function removeChildren() {}
+function removeChildren(obj) {
+  while (obj.hasChildNodes()) {
+    obj.removeChild(obj.firstChild);
+  }
+}
