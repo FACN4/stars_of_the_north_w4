@@ -3,7 +3,7 @@ var data = require("../data.json").stars;
 
 function wordSearch(str) {
   var output = [];
-  for (var i = 0, l = data.length; i < l && output.length < 5; i++) {
+  for (var i = 0, l = data.length; i < l && output.length < 10; i++) {
     var word = data[i];
     if (str === "") {
       return (output = []);

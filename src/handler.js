@@ -40,6 +40,7 @@ function assetsHandler(request, response) {
 
 function searchHandler(request, response) {
   var url = request.url;
+  url = decodeURI(url);
   var queryString = url.split("q=")[1];
   var returnArray = wordSearch(queryString);
   // // var filePath = path.join(__dirname, '..', 'public', url);

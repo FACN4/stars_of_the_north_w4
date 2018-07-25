@@ -9,7 +9,9 @@ starForm.addEventListener("keyup", function() {
 
 function fetchDataFromServer(userQuery, callback) {
   var xhr = new XMLHttpRequest();
+  userQuery = userQuery.toLowerCase();
   var url = "/search" + "?q=" + userQuery;
+  var encoded = encodeURI(url);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
       console.log(xhr.responseText);
@@ -17,7 +19,7 @@ function fetchDataFromServer(userQuery, callback) {
       callback(response);
     }
   };
-  xhr.open("GET", url, true);
+  xhr.open("GET", encoded, true);
   xhr.send();
 }
 
