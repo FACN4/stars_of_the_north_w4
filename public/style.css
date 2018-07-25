@@ -1,23 +1,104 @@
 body {
+  font-family: "Noto Sans", sans-serif;
   color: #fff;
-  background: #000 url("./images/stars_sky_night_113553_300x168.jpg");
-  background-repeat: repeat;
-  background-position: top;
   text-align: center;
+  margin-top: 200px;
 }
-
+h1 {
+  font-size: 70px;
+}
 form input {
-  width: 500px;
-  background: #d3d3d3;
-  border: 0px;
+  width: 182px;
+  height: 80px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 48px;
+  padding-left: 30px;
+  background-color: transparent;
+  background-position: 10px 10px;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  border-color: #fff;
+  color: #fff;
+}
+img {
+  height: 40px;
 }
 
-.searchResult {
-  width: 500px;
-  background: #d3d3d3;
+input[type="text"]:focus {
+  width: 40%;
+}
+
+.search-result {
+  width: 250px;
+  height: 75px;
+  background-color: transparent;
   margin: 0 auto;
 }
 
-.searchResult:hover {
-  background: dark grey;
+search-result:hover {
+  background: #000;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.stars,
+.twinkling,
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  hight: 100%;
+  display: block;
+}
+.stars {
+  background: #000 url(images/stars.png) repeat top center;
+  z-index: -2;
+}
+
+.twinkling {
+  background: transparent url(images/twinkling.png) repeat top center;
+  z-index: -1;
+
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
 }
