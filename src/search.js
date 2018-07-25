@@ -1,25 +1,18 @@
 var url = require("url");
-var read = require("./dictionary.js");
+var data = require("../data.json").stars;
 
-function wordSearch(request, response) {
-  read(function(autocomplete) {
-    var query = url.parse(request.url, true).query;
-    var userInput = query.description;
-    console.log('userInput',userInput);
+function wordSearch(str) {
     var output = [];
-    for (var i = 0, l = autocomplete.length; i < l && output.length < 10; i++) {
-      var word = autocomplete[i];
-      if (userInput === ""){
-        output = [];
+    for (var i = 0, l = data.length; i < l && output.length < 85; i++) {
+    var word = data[i];
+      if (str === ""){
+        return output = [];
       }
-      if (word.indexOf(userInput) === 0) {
+      if (word.indexOf(str) === 0) {
         output.push(word);
       }
-
     }
-    console.log(output);
-    response.end(JSON.stringify(output));
-  });
+    return output;
 }
 
 module.exports = wordSearch;

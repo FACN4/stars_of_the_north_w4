@@ -1,5 +1,6 @@
 var fs = require("fs");
-var autocomplete = require("./dictionary.js")
+var wordSearch = require('./search')
+var path = require("path");
 
 function indexHandler(request, response) {
     fs.readFile(__dirname + "/../public/index.html", function(error, file) {
@@ -16,18 +17,40 @@ function indexHandler(request, response) {
   }
 
 function assetsHandler (request, response){
-  fs.readFile(__dirname + "/../public/" +request.url, function(error, file) {
-    if (error) {
-      console.error(error);
-      response.writeHead(404);
-    } else {
-      response.write(file);
+  var url = request.url;
+  var extension = url.split('.')[1];
+  var extensionType = {
+    html: 'text/html',
+    css: 'text/css',
+    js: 'application/javascript',
+    ico: 'image/x-icon',
+    jpg: 'image/jpeg',
+    json: 'application/json'
+  };
+    var filePath = path.join(__dirname, '..', 'public', url);
+    fs.readFile(filePath, function(error, file){
+    if(error){
+    response.writeHead(500, 'Content-Type: text/html');
+    response.end('<h1>sorry, something went wrong</h1>');
     }
-    response.end();
-  });
+  response.writeHead(200, {"Content-Type":extensionType[extension]});
+  response.end(file);
+})
+}
 
-
+function searchHandler (request, response){
+  var url = request.url;
+  var queryString = url.split('q=')[1];
+  var returnArray = wordSearch(queryString);
+  // // var filePath = path.join(__dirname, '..', 'public', url);
+  // //   fs.readFile(filePath, function(error, file){
+  //   if(error){
+  //   response.writeHead(500, 'Content-Type: text/html');
+  //   response.end('<h1>sorry, something went wrong</h1>');
+  //   }
+  response.writeHead(200, {'Content-Type': 'application/json'});
+  response.end(JSON.stringify(returnArray));
 }
 
 
-  module.exports = {index: indexHandler, assets: assetsHandler};
+  module.exports = {index: indexHandler, assets: assetsHandler, search:searchHandler};
