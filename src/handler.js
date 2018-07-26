@@ -8,7 +8,8 @@ function indexHandler(request, response) {
   fs.readFile(__dirname + "/../public/index.html", function(error, file) {
     if (error) {
       console.error(error);
-      response.writeHead(404);
+      response.writeHead(500, { "Content-Type": "text/html" });
+      response.end("<h1>sorry, something went wrong</h1>");
     } else {
       response.writeHead(200, { "Content-type": "text/html" });
       response.write(file);
