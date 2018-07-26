@@ -6,7 +6,7 @@ Our link: http://stars-of-the-north.herokuapp.com/
 
 ## Our Aim
 
-Our project allows users get a list of suggestions of star names. They are given a list of suggestions when typing a letter or a string about the star name they're looking for. This enables the user to quickly pick the name of their favourite star. The user is then able to search Google directly for further information about the selected star.
+Our project allows users get a list of suggestions of star names. They are given a list of suggestions when typing a letter or a string about the star name they're looking for. This enables the user to quickly pick the name of their favourite star. The user is then able to click their star's result and search Google directly for further information about the selected star.
 
 ## Our Journey
 
