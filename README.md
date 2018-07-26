@@ -39,7 +39,7 @@ Statement process
 5. If the user types another characters besides a letters, the server wont turn anything.
 6. The user can easily and quickly pick up the name of the star he is looking for.
 ---
-Reference - User's stories:
+##Reference - User's stories:
 ---
 We met the following user's stories with our website:
 
@@ -49,7 +49,7 @@ We met the following user's stories with our website:
 [] A quick and easy search through the data file and loading.
 ---
 
-Strech Goals:
+##Strech Goals:
 ---
 
 [] Back-end testing using tape on pure function (not pure).
