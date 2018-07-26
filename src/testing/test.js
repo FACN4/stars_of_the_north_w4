@@ -34,7 +34,6 @@ test("Search finds the expected output", function(assert) {
 test("Empty string is ok", function(assert) {
   const actual = search("");
   const expected = [];
-
   assert.deepEquals(actual, expected, "Empty string");
   assert.end();
 });
