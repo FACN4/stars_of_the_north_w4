@@ -1,7 +1,8 @@
 // Event listener to trigger function when the user has typed in the main input form of the page
 
 var inputField = document.getElementById("star-finder");
-inputField.addEventListener("keyup", function() {
+inputField.addEventListener("keyup", function(e) {
+  e.preventDefault();
   fetchDataFromServer(inputField.value, appendDataFromServer);
 });
 

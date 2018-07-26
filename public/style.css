@@ -83,7 +83,7 @@ h1 {
 
 /* Form CSS */
 
-form input {
+input {
   width: 182px;
   height: 80px;
   border: 2px solid #ccc;
@@ -99,7 +99,7 @@ form input {
   border-color: #fff;
   color: #fff;
 }
-label {
+p {
   font-size: 25px;
   display: block;
   margin-bottom: 40px;
