@@ -1,59 +1,56 @@
 # Stars Of The North - Matt, Yoosef, Noor & Suha
 
----
-
-Our link:
+Our link: http://stars-of-the-north.herokuapp.com/
 
 ---
 
-### Section 1. Why?
+## Our Aim
+
+Our project allows users get a list of suggestions of star names. They are given a list of suggestions when typing a letter or a string about the star name they're looking for. This enables the user to quickly pick the name of their favourite star. The user is then able to click their star's result and search Google directly for further information about the selected star.
+
+## Our Journey
+
+**Day 1 AM:** We brainstormed as a team and then decided the topic of our website. We first looked at
+**Day 1 PM:** We went through the user's stories, and agreed on the back-end and the front-end files structure. We broke into 2 teams, one team worked on back-end files, and the other on front-end files, by devising a simulated files for the server and the HTML at the beginning
+**Day 2 AM:** We met in the morning and the backend team continued working on the search functionality whilst the frontend team worked on CSS and writing the XHR request
+**Day 3 PM:** We connected the frontend and backend and appended the search results to a div on a front end. We also added functionality for the user to click the star name to go to Google.
+
+## Site Structure
+
+The website contains a header, an userInput box to search for the stars' names, and displays the search results in a pre-populated list (an autocompleter to update list of suggestions as we type).
+
+![](https://i.imgur.com/yDo5P5h.png)
 
 ---
 
-Our project is aimed to let the users get a list of suggestions of stars names, when typing a letter or a string about the star name they're looking for, so the user can pick up the name of his favorite style easily and quickly, then the user will git some informations about the selected star.
----
+## Statement process
 
-### Section 2. What?
+1.  The user types a letter/string.
+2.  A request is sent with the letter typed, to the server by the client(index.js).
+3.  The server takes this request and searches through a large data file(data.json).
+4.  The server responds with a list of possible words with the letter the user inserts, which will be displayed on the page.
+5.  The user can easily and quickly pick up the name of the star he is looking for.
 
----
+## Architecture and Data Flow
 
-The website contains a header, an userInput box to search for the stars' names, and desplays the search results in a pre-populated list (an autocompleter to update list of suggestions as we type).
-
----
-
-### Section 3. How?
-
----
-
-Firstly, we decided about the topic of our website, then we went throught the user's stories, and agreed on the back-end and the front-end files structure.
-Next we broke into 2 teams, one team worked on back-end files, and the other on front-end files, by devising a simulated files for the server and the HTML at the beginning.
+![](https://i.imgur.com/1ZxFPaD.png)
 
 ---
 
-Statement process
----
-1. The user types a lettter/string.
-2. A request is sent with the letter typed, to the server by the client(index.js).
-3. The server takes this request and search through a large data file(data.json).
-4. The server responses with a list of possible words with the letter the user inserts, which will be displayed on the page.
-5. If the user types another characters besides a letters, the server wont turn anything.
-6. The user can easily and quickly pick up the name of the star he is looking for.
----
-Reference - User's stories:
----
+## Reference - User's stories:
+
 We met the following user's stories with our website:
 
-[] Show a list of suggestion according to the letters/string being typed.
-[] Update and filter the list of suggestion each time we add more letter.
-[] Creating a large data file (JSON).
-[] A quick and easy search through the data file and loading.
+- [x] Show a list of suggestion according to the letters/string being typed.
+- [x] Update and filter the list of suggestion each time we add more letter.
+- [x] Creating a large data file (JSON).
+- [x] A quick and easy search through the data file and loading.
+
 ---
 
-Strech Goals:
----
+## Stretch Goals:
 
-[] Back-end testing using tape on pure function (not pure).
-[] Front-end testing.
-[] Deploy to heroku.
-[] Export files and require them using.
-[] Well structured server files. (server.js, handler.js, router.js, search.js )
+- [x] Testing using tape on pure function (not pure).
+- [x] Deploy to heroku.
+- [x] Export files and require them using.
+- [x] Well structured server files. (server.js, handler.js, router.js, search.js )

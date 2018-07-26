@@ -2,6 +2,8 @@ var fs = require("fs");
 var wordSearch = require("./search");
 var path = require("path");
 
+// indexHandler function manages the request for URL '/'
+
 function indexHandler(request, response) {
   fs.readFile(__dirname + "/../public/index.html", function(error, file) {
     if (error) {
@@ -14,6 +16,8 @@ function indexHandler(request, response) {
     response.end();
   });
 }
+
+// assetsHandler function manages the request for files across an array of extensionTypes including the project CSS, images, JS and JSON.
 
 function assetsHandler(request, response) {
   var url = request.url;
@@ -38,17 +42,13 @@ function assetsHandler(request, response) {
   });
 }
 
+// searchHandler function deals with the search request and returns array of words matching the user's search to be passed back to the client.
+
 function searchHandler(request, response) {
   var url = request.url;
   url = decodeURI(url);
   var queryString = url.split("q=")[1];
   var returnArray = wordSearch(queryString);
-  // // var filePath = path.join(__dirname, '..', 'public', url);
-  // //   fs.readFile(filePath, function(error, file){
-  //   if(error){
-  //   response.writeHead(500, 'Content-Type: text/html');
-  //   response.end('<h1>sorry, something went wrong</h1>');
-  //   }
   response.writeHead(200, { "Content-Type": "application/json" });
   response.end(JSON.stringify(returnArray));
 }

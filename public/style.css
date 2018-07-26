@@ -1,3 +1,5 @@
+/* Site Structure CSS */
+
 body {
   font-family: "Noto Sans", sans-serif;
   color: #fff;
@@ -9,46 +11,8 @@ a {
   color: #fff;
   display: block;
 }
-h1 {
-  font-size: 70px;
-}
-form input {
-  width: 182px;
-  height: 80px;
-  border: 2px solid #ccc;
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-size: 48px;
-  padding-left: 30px;
-  background-color: transparent;
-  background-position: 10px 10px;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
-  border-color: #fff;
-  color: #fff;
-}
-label {
-  font-size: 25px;
-}
-img {
-  height: 40px;
-}
 
-input[type="text"]:focus {
-  width: 40%;
-}
-
-.search-result {
-  width: 250px;
-  height: 75px;
-  background-color: transparent;
-  margin: 0 auto;
-}
-
-search-result:hover {
-  background: #000;
-}
+/* Background CSS */
 
 @keyframes move-twink-back {
   from {
@@ -111,5 +75,69 @@ search-result:hover {
   animation: move-twink-back 200s linear infinite;
 }
 
-@media() {
+/* Header CSS */
+
+h1 {
+  font-size: 70px;
+}
+
+/* Form CSS */
+
+form input {
+  width: 182px;
+  height: 80px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 48px;
+  padding-left: 30px;
+  background-color: transparent;
+  background-position: 10px 10px;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+  border-color: #fff;
+  color: #fff;
+}
+label {
+  font-size: 25px;
+  display: block;
+  margin-bottom: 40px;
+}
+img {
+  height: 40px;
+}
+
+input[type="text"]:focus {
+  width: 40%;
+}
+
+/* Search Result CSS */
+
+.search-result {
+  width: 250px;
+  height: 75px;
+  background-color: transparent;
+  margin: 0 auto;
+}
+
+search-result:hover {
+  background: #000;
+}
+
+/*
+============================
+    THIS IS TABLET!!!!!!
+============================
+*/
+@media only screen and (min-width: 601px) {
+}
+
+/*
+============================
+    THIS IS DESKTOP!!!!!!
+============================
+*/
+
+@media only screen and (min-width: 1001px) {
 }
