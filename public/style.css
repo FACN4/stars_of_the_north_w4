@@ -28,6 +28,9 @@ form input {
   border-color: #fff;
   color: #fff;
 }
+label {
+  font-size: 25px;
+}
 img {
   height: 40px;
 }
