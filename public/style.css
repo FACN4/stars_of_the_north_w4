@@ -126,6 +126,18 @@ search-result:hover {
 }
 
 /*
+============================
+    THIS IS TABLET!!!!!!
+============================
+*/
+@media only screen and (min-width: 601px) {
+}
 
-@media() {
+/*
+============================
+    THIS IS DESKTOP!!!!!!
+============================
+*/
+
+@media only screen and (min-width: 1001px) {
 }
