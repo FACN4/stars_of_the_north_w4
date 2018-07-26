@@ -1,7 +1,7 @@
 var test = require("tape");
 var search = require("../search");
 
-// Test on the search function
+// Tests on the search function
 
 test("Search returns an array", function(assert) {
   const actual = Array.isArray(search("a"));
