@@ -43,6 +43,8 @@ function appendDataFromServer(response) {
   }
 }
 
+// Helper function to removeChildren divs before populating search results again
+
 function removeChildren(obj) {
   while (obj.hasChildNodes()) {
     obj.removeChild(obj.firstChild);

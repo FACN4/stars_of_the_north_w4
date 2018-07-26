@@ -43,12 +43,6 @@ function searchHandler(request, response) {
   url = decodeURI(url);
   var queryString = url.split("q=")[1];
   var returnArray = wordSearch(queryString);
-  // // var filePath = path.join(__dirname, '..', 'public', url);
-  // //   fs.readFile(filePath, function(error, file){
-  //   if(error){
-  //   response.writeHead(500, 'Content-Type: text/html');
-  //   response.end('<h1>sorry, something went wrong</h1>');
-  //   }
   response.writeHead(200, { "Content-Type": "application/json" });
   response.end(JSON.stringify(returnArray));
 }
