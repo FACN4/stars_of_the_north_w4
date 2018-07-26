@@ -1,8 +1,8 @@
 // Event listener to trigger function when the user has typed in the main input form of the page
 
-var starForm = document.getElementById("star-finder");
-starForm.addEventListener("keyup", function() {
-  fetchDataFromServer(starForm.value, appendDataFromServer);
+var inputField = document.getElementById("star-finder");
+inputField.addEventListener("keyup", function() {
+  fetchDataFromServer(inputField.value, appendDataFromServer);
 });
 
 // Function to send a request for data from the server
@@ -28,7 +28,7 @@ function fetchDataFromServer(userQuery, callback) {
 function appendDataFromServer(response) {
   var searchResults = document.getElementById("search-results");
   removeChildren(searchResults);
-  if (response.length === 0 && starForm.value !== "") {
+  if (response.length === 0 && inputField.value !== "") {
     var newDiv = document.createElement("div");
     newDiv.textContent = "Sorry, no results found. Please try another search.";
     searchResults.appendChild(newDiv);
