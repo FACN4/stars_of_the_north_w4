@@ -1,14 +1,13 @@
-var staticHandler = require("./handler.js");
+var handlers = require("./handler.js");
 
 function router(request, response) {
-  var endpoint = request.url;
-  console.log(endpoint);
-  if (endpoint === "/") {
-    staticHandler.index(request, response);
-  } else if (endpoint.indexOf("/search?q=") === 0) {
-    staticHandler.search(request, response);
+  var url = request.url;
+  if (url === "/") {
+    handlers.index(response);
+  } else if (url.indexOf("/search?q=") === 0) {
+    handlers.search(url, response);
   } else {
-    staticHandler.assets(request, response);
+    handlers.assets(url, response);
   }
 }
 
