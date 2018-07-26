@@ -5,7 +5,7 @@ function router(request, response) {
   console.log(endpoint);
   if (endpoint === "/") {
     staticHandler.index(request, response);
-  } else if (endpoint.indexOf("/search")===0) {
+  } else if (endpoint.indexOf("/search?q=") === 0) {
     staticHandler.search(request, response);
   } else {
     staticHandler.assets(request, response);

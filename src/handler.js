@@ -34,11 +34,12 @@ function assetsHandler(request, response) {
   var filePath = path.join(__dirname, "..", "public", url);
   fs.readFile(filePath, function(error, file) {
     if (error) {
-      response.writeHead(500, "Content-Type: text/html");
+      response.writeHead(500, { "Content-Type": "text/html" });
       response.end("<h1>sorry, something went wrong</h1>");
+    } else {
+      response.writeHead(200, { "Content-Type": extensionType[extension] });
+      response.end(file);
     }
-    response.writeHead(200, { "Content-Type": extensionType[extension] });
-    response.end(file);
   });
 }
 
