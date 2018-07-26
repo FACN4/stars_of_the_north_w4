@@ -30,3 +30,11 @@ test("Search finds the expected output", function(assert) {
   assert.equal(actual, expected, "Search finds the output and returns it");
   assert.end();
 });
+
+test("Empty string is ok", function(assert) {
+  const actual = search("");
+  const expected = [];
+
+  assert.deepEquals(actual, expected, "Empty string");
+  assert.end();
+});
