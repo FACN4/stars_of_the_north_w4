@@ -84,18 +84,19 @@ h1 {
 /* Form CSS */
 
 input {
-  width: 182px;
+  width: 70%;
+  max-width: 300px;
   height: 80px;
   border: 2px solid #ccc;
   box-sizing: border-box;
   border-radius: 10px;
-  font-size: 48px;
+  font-size: 24px;
   padding-left: 30px;
   background-color: transparent;
   background-position: 10px 10px;
   padding: 12px 20px 12px 40px;
   -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
+  transition: max-width 0.5s ease-in-out;
   border-color: #fff;
   color: #fff;
 }
@@ -109,7 +110,7 @@ img {
 }
 
 input[type="text"]:focus {
-  width: 40%;
+  max-width: 600px;
 }
 
 /* Search Result CSS */
@@ -131,6 +132,9 @@ search-result:hover {
 ============================
 */
 @media only screen and (min-width: 601px) {
+  #star-finder {
+    font-size: 48px;
+  }
 }
 
 /*
