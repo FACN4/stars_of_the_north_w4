@@ -4,8 +4,8 @@
   "description": "An autosuggest for the stars in the universe",
   "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "test": "tape .src/testing/js | tap-spec",
+    "start": "node src/testing/test.js"
   },
   "repository": {
     "type": "git",
