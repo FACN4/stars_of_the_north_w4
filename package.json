@@ -4,8 +4,9 @@
   "description": "An autosuggest for the stars in the universe",
   "main": "src/server.js",
   "scripts": {
-    "test": "tape .src/testing/js | tap-spec",
-    "start": "node src/testing/test.js"
+    "dev": "nodemon src/server.js",
+    "test": "nyc tape src/testing/test.js",
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",

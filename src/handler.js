@@ -4,11 +4,13 @@ var path = require("path");
 
 // indexHandler function manages the request for URL '/'
 
-function indexHandler(request, response) {
-  fs.readFile(__dirname + "/../public/index.html", function(error, file) {
+function indexHandler(response) {
+  var filePath = path.join(__dirname, "..", "public", "index.html");
+  fs.readFile(filePath, function(error, file) {
     if (error) {
       console.error(error);
-      response.writeHead(404);
+      response.writeHead(500, { "Content-Type": "text/html" });
+      response.end("<h1>sorry, something went wrong</h1>");
     } else {
       response.writeHead(200, { "Content-type": "text/html" });
       response.write(file);
@@ -19,8 +21,7 @@ function indexHandler(request, response) {
 
 // assetsHandler function manages the request for files across an array of extensionTypes including the project CSS, images, JS and JSON.
 
-function assetsHandler(request, response) {
-  var url = request.url;
+function assetsHandler(url, response) {
   var extension = url.split(".")[1];
   var extensionType = {
     html: "text/html",
@@ -34,18 +35,18 @@ function assetsHandler(request, response) {
   var filePath = path.join(__dirname, "..", "public", url);
   fs.readFile(filePath, function(error, file) {
     if (error) {
-      response.writeHead(500, "Content-Type: text/html");
+      response.writeHead(500, { "Content-Type": "text/html" });
       response.end("<h1>sorry, something went wrong</h1>");
+    } else {
+      response.writeHead(200, { "Content-Type": extensionType[extension] });
+      response.end(file);
     }
-    response.writeHead(200, { "Content-Type": extensionType[extension] });
-    response.end(file);
   });
 }
 
 // searchHandler function deals with the search request and returns array of words matching the user's search to be passed back to the client.
 
-function searchHandler(request, response) {
-  var url = request.url;
+function searchHandler(url, response) {
   url = decodeURI(url);
   var queryString = url.split("q=")[1];
   var returnArray = wordSearch(queryString);
